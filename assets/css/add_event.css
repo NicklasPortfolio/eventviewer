@@ -1,0 +1,19 @@
+#selectedHostsContainer {
+  display: flex;
+  align-items: center;
+}
+
+#selectedHosts {
+  margin-left: 10px;
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  padding: 5px;
+  min-height: 38px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.host-badge {
+  margin-right: 5px;
+}
