@@ -1,16 +1,18 @@
 const app = Vue.createApp({
   data() {
     return {
-      password: "",
-      passwordError: "",
+      password: "", // Håller det nuvarande lösenordet
+      passwordError: "", // Håller eventuella felmeddelanden för lösenordet
     };
   },
   watch: {
+    // Observerar ändringar i 'password'
     password(newPassword) {
-      this.validatePassword(newPassword);
+      this.validatePassword(newPassword); // Validera lösenordet när det ändras
     },
   },
   methods: {
+    // Metod för att validera lösenordet
     validatePassword(password) {
       const minLength = 8;
       const lowercasePattern = /[a-z]/;
@@ -31,11 +33,15 @@ const app = Vue.createApp({
       } else if (!specialCharPattern.test(password)) {
         this.passwordError =
           "Password must contain at least one special character.";
-      } else {
-        this.passwordError = "";
+      }
+
+      // Om lösenordet uppfyller alla krav
+      else {
+        this.passwordError = ""; // Inga felmeddelanden
       }
     },
   },
 });
 
+// Montera appen på #app-elementet i HTML
 app.mount("#app");

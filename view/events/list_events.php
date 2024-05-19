@@ -47,6 +47,7 @@
                                     <?= $event['event_date'] ?>
                                 </h6>
                                 <p class="card-text"><?= $event['event_description']; ?></p>
+                                <?php if (isset($_SESSION["admin"])) { ?>
                                 <div>
                                     <form action="." method="post" class="d-inline delete-event-form">
                                         <input type="hidden" name="action" value="delete_event">
@@ -59,6 +60,7 @@
                                         <button type="submit" class="btn btn-info btn-sm">✏️ Edit Event</button>
                                     </form>
                                 </div>
+                                <?php } ?>
                             </div>
                         </div>
                         <?php if ($event['event_img']) { ?>
